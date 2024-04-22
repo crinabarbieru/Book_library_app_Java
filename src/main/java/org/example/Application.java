@@ -1,8 +1,5 @@
 package org.example;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.exc.InvalidFormatException;
 import com.mysql.cj.exceptions.NumberOutOfRange;
 
 import java.sql.*;
@@ -249,7 +246,7 @@ public class Application {
                             od.write("Author's First Name:");
                          answer = id.nextLine();
                          answer=answer.strip();
-                         if(answer.length()>0) {
+                         if(!answer.isEmpty()) {
                              fname = answer.split(" ")[0];
                              if(fname.length()>0)
                                  break;
@@ -261,9 +258,9 @@ public class Application {
                             od.write("Author's Last Name:");
                             answer = id.nextLine();
                             answer=answer.strip();
-                            if(answer.length()>0) {
+                            if(!answer.isEmpty()) {
                                 lname = answer.split(" ")[0];
-                                if (lname.length() > 0)
+                                if (!lname.isEmpty())
                                     break;
                                 od.write("Please input a valid first name!");
                             }
